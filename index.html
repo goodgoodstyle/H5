@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <!--dev-->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.min.css">
+    <script src="js/less-2.5.3.min.js"></script>
+    <!--prefixFree:设置前缀的插件-->
+    <script src="js/prefixfree.min.js"></script>
+    <!--rem-->
+    <script>
+        //根据当前设备的宽度，动态计算出rem的换算比例，实现页面中元素的等比缩放
+        ~function anonymous(window) {
+            let computedREM = function computedREM() {
+                let winW = document.documentElement.clientWidth,
+                    desW = 640;
+                document.documentElement.style.fontSize = winW / desW * 100 + "px";
+                if (winW >= 640) {
+                    document.documentElement.style.fontSize = "100px";
+                    return;
+                }
+            };
+            computedREM();
+            window.addEventListener("resize", computedREM);
+        }(window);
+    </script>
+
+
+</head>
+<body>
+<!--外面套一层mainBox，主要目的就是为了控制当前页面的最大宽度，防止把做好的页面在PC端预览的时候满屏展示，这样字体和盒子大小等被肆意的拉伸-->
+<main class="mainBox">
+    <!--loading区域-->
+    <section class="loadingBox">
+        <div class="title">
+            <h1>贾腾达</h1>
+            <h2>H5场景交互简历</h2>
+        </div>
+        <div class="progress">
+            <div class="current"></div>
+        </div>
+    </section>
+
+    <!--phone区域-->
+    <section class="phoneBox">
+        <h2>
+            <img src="img/zf_phoneLogo.png" alt="">
+            <span>00:00</span>
+        </h2>
+        <div class="answer">
+            <div class="markMove"></div>
+            <a href="javascript:;" class="markLink"></a>
+        </div>
+        <div class="hang">
+            <a href="javascript:;" class="markLink"></a>
+        </div>
+        <!--audio-->
+        <audio src="audio/bell.mp3" loop preload="none" id="answerBell"></audio>
+        <audio src="audio/say.mp3" preload="none" id="introduction"></audio>
+
+    </section>
+
+    <!--message区域-->
+    <section class="messageBox">
+        <ul class="wrapper clearfix">
+            <li class="self">
+                <i class="arrow"></i>
+                <img src="img/zf_messageStudent.png" alt="" class="pic">
+                面试官您好，面试官再见~
+            </li>
+            <li class="inter">
+                <i class="arrow"></i>
+                <img src="img/zf_messageLogo.png" alt="" class="pic">
+                你好，再见~
+            </li>
+            <li class="self">
+                <i class="arrow"></i>
+                <img src="img/zf_messageStudent.png" alt="" class="pic">
+                我又回来了~
+            </li>
+            <li class="inter">
+                <i class="arrow"></i>
+                <img src="img/zf_messageLogo.png" alt="" class="pic">
+                回来干嘛6666~
+            </li>
+            <li class="self">
+                <i class="arrow"></i>
+                <img src="img/zf_messageStudent.png" alt="" class="pic">
+                忘了告诉你，我叫XXX~
+            </li>
+            <li class="inter">
+                <i class="arrow"></i>
+                <img src="img/zf_messageLogo.png" alt="" class="pic">
+                你被录取了~
+            </li>
+            <li class="self">
+                <i class="arrow"></i>
+                <img src="img/zf_messageStudent.png" alt="" class="pic">
+                我没工作经验，技术不好~
+            </li>
+            <li class="inter">
+                <i class="arrow"></i>
+                <img src="img/zf_messageLogo.png" alt="" class="pic">
+                没事~
+            </li>
+            <li class="self">
+                <i class="arrow"></i>
+                <img src="img/zf_messageStudent.png" alt="" class="pic">
+                我没有优点，和其他人比，没有任何竞争力~
+            </li>
+            <li class="inter">
+                <i class="arrow"></i>
+                <img src="img/zf_messageLogo.png" alt="" class="pic">
+                没事~
+            </li>
+        </ul>
+        <div class="keyboard">
+            <span></span>
+            <a href="javascript:;" class="submit"></a>
+        </div>
+        <audio src="audio/music.mp3" preload="none" loop id="demonMusic"></audio>
+
+    </section>
+
+    <!--cube-->
+    <section class="cubeBox">
+        <ul class="cube">
+            <li><img src="img/zf_cube1.png" alt=""></li>
+            <li><img src="img/zf_cube2.png" alt=""></li>
+            <li><img src="img/zf_cube3.png" alt=""></li>
+            <li><img src="img/zf_cube4.png" alt=""></li>
+            <li><img src="img/zf_cube5.png" alt=""></li>
+            <li><img src="img/zf_cube6.png" alt=""></li>
+        </ul>
+        <img src="img/zf_cubeTip.png" alt="" class="tip">
+    </section>
+
+
+    <!--detail-->
+    <section class="detailBox">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!--page-->
+            <div class="swiper-slide page1">
+                <dl>
+                    <dt> 课程大纲</dt>
+                    <dd><em>01</em><a href="#">H5+CSS3+移动端响应式布局</a></dd>
+                    <dd><em>02</em><a href="#">闭包堆栈内存，this问题</a></dd>
+                    <dd><em>03</em><a href="#">面向对象编程，封装插件</a></dd>
+                    <dd><em>04</em><a href="#">ES6中的新语法和常用方法</a></dd>
+                    <dd><em>05</em><a href="#">同步异步编程，Promise设计模式</a></dd>
+                    <dd><em>06</em><a href="#">事件及事件委托及事件池及发布订阅</a></dd>
+                    <dd><em>07</em><a href="#">DOM操作及重绘和回流优化</a></dd>
+                    <dd><em>08</em><a href="#">HTTP交互及AJAX库的封装及跨域请求</a></dd>
+                    <dd><em>09</em><a href="#">vue:vue-cli/cue-router/vuex/vue element</a></dd>
+                    <dd><em>10</em><a href="#">React:React-router/React/ant</a></dd>
+                    <dd><em>11</em><a href="#">辅助:node/webpack等</a></dd>
+
+                </dl>
+            </div>
+            <div class="swiper-slide page2">
+                <h2>课程体系</h2>
+                <img src="img/zf_course1.png" alt="">
+                <img src="img/zf_course2.png" alt="">
+                <img src="img/zf_course3.png" alt="">
+                <img src="img/zf_course4.png" alt="">
+                <img src="img/zf_course5.png" alt="">
+                <img src="img/zf_course6.png" alt="">
+                <img src="img/zf_course.png" alt="">
+            </div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+        </div>
+    </div>
+
+    </section>
+
+</main>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/swiper-3.4.2.jquery.min.js"></script>
+<script src="js/makisu.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
